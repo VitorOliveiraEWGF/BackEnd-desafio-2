@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "votos")
 
-public class votos {
+public class Voto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class votos {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pauta_id", nullable = false)
-    private pautas pauta;
+    private Pauta pauta;
 
     @Column(name = "associado_id", nullable = false)
     private Long associadoId;
@@ -29,11 +29,11 @@ public class votos {
         this.id = id;
     }
 
-    public pautas getPauta() {
+    public Pauta getPauta() {
         return pauta;
     }
 
-    public void setPauta(pautas pauta) {
+    public void setPauta(Pauta pauta) {
         this.pauta = pauta;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Table(name = "pautas")
 
-public class pautas {
+public class Pauta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +23,7 @@ public class pautas {
     private Integer duracaoVotacao;
 
     @OneToMany(mappedBy = "pauta", cascade = CascadeType.ALL) // Define relacionamento um-para-muitos com Votos
-    private List<votos> votos;
+    private List<Voto> Voto;
 
     public Long getId() {
         return id;
@@ -57,11 +57,11 @@ public class pautas {
         this.duracaoVotacao = duracaoVotacao;
     }
 
-    public List<com.example.entidades.votos> getVotos() {
-        return votos;
+    public List<Voto> getVotos() {
+        return Voto;
     }
 
-    public void setVotos(List<com.example.entidades.votos> votos) {
-        this.votos = votos;
+    public void setVotos(List<Voto> Voto) {
+        this.Voto = Voto;
     }
 }
